@@ -1,0 +1,43 @@
+{
+  "name": "webpack-boilerplate-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --progress --colors --config build/webpack.config.js",
+    "idev": "npm install && npm build-css && webpack-dev-server --progress --colors --config build/webpack.config.js",
+    "build-css": "npm run build-css-index",
+    "build-css-index": "webpack --progress --config build/build-css-index.config.js",
+    "build-scss-index": "webpack --progress --config build/build-scss-index.config.js",
+    "watch-css": "webpack -w --progress --config build/build-css-index.config.js",
+    "dist": "webpack --progress --config build/dist.config.js",
+    "watch-dist": "webpack -w --progress --config build/dist.config.js",
+    "dist.min": "webpack --progress -p --config build/dist.min.config.js",
+    "build": "npm run build-css && npm run dist && npm run dist.min",
+    "prepublish": "npm run build"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "path": "^0.12.7",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1",
+    "webpack-livereload-plugin": "^0.8.1"
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.10.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "node-sass": "^3.8.0",
+    "sass-loader": "^4.0.0",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7"
+  }
+}
